@@ -1,0 +1,10 @@
+2026-10-15 17:37:32.582 | INFO     | __main__            :<module>       :161  - 【信息】logger.py内部调用（仅测试，业务模块调用会显示正确文件名）
+2026-10-15 17:37:32.583 | WARNING  | __main__            :<module>       :166  - 【警告】未读取到自定义配置，使用默认配置
+2026-10-15 17:37:32.584 | ERROR    | __main__            :<module>       :169  - 【错误】logger.py内部调用（仅测试，业务模块调用会显示正确文件名）
+2026-10-15 17:37:32.584 | ERROR    | __main__            :<module>       :176  - 【异常】捕获到业务异常，输出完整堆栈信息
+Traceback (most recent call last):
+
+> File "E:\AI应用开发学习笔记\16_尚硅谷大模型技术之掌柜智库\Project\Think-Tank\app\shared\runtime\logger.py", line 173, in <module>
+    result = 10 / 0
+
+ZeroDivisionError: division by zero
