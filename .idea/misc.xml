@@ -3,5 +3,8 @@
   <component name="Black">
     <option name="sdkName" value="E:\Study_app\anconda" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="E:\Study_app\anconda" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 virtualenv at E:\AI应用开发学习笔记\16_尚硅谷大模型技术之掌柜智库\Project\Think-Tank\.venv" project-jdk-type="Python SDK" />
+  <component name="PyPackaging">
+    <option name="earlyReleasesAsUpgrades" value="true" />
+  </component>
 </project>
