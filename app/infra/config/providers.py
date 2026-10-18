@@ -1,3 +1,5 @@
+from app.shared.config import LLMConfig, EmbeddingConfig, RerankerConfig, McpConfig, MilvusConfig, MinerUConfig, \
+    MinIOConfig
 from app.shared.config.embedding_config import embedding_config
 from app.shared.config.lm_config import lm_config
 from app.shared.config.bailian_mcp_config import mcp_config
@@ -5,22 +7,24 @@ from app.shared.config.milvus_config import milvus_config
 from app.shared.config.mineru_config import mineru_config
 from app.shared.config.minio_config import minio_config
 from app.shared.config.reranker_config import reranker_config
-from app.shared.config.settings_config import settings
+from app.shared.config.settings_config import settings, AppSettings
 
 from dataclasses import dataclass , field
 
 @dataclass
 class InfraConfig:
-    app: object = field(default_factory=lambda: settings)
-    llm: object = field(default_factory=lambda: lm_config)
-    embedding: object = field(default_factory=lambda: embedding_config)
-    reranker: object = field(default_factory=lambda: reranker_config)
-    mcp: object = field(default_factory=lambda: mcp_config)
-    milvus: object = field(default_factory=lambda: milvus_config)
-    mineru: object = field(default_factory=lambda: mineru_config)
-    minio: object = field(default_factory=lambda: minio_config)
+    settings: AppSettings = field(default_factory=lambda: settings)
+
+    lm_config: LLMConfig = field(default_factory=lambda: lm_config)
+    embedding_config:EmbeddingConfig = field(default_factory=lambda: embedding_config)
+    reranker_config:RerankerConfig = field(default_factory=lambda: reranker_config)
+    mcp_config: McpConfig = field(default_factory=lambda: mcp_config)
+    milvus_config: MilvusConfig = field(default_factory=lambda: milvus_config)
+    mineru_config: MinerUConfig = field(default_factory=lambda: mineru_config)
+    minio_config: MinIOConfig = field(default_factory=lambda: minio_config)
 
 infra_config = InfraConfig()
 
-if __name__ == '__main__':
-    print(infra_config.llm.api_key)
+if __name__ == "__main__":
+    print(infra_config.lm_config.api_key)
+    print(infra_config.mcp_config.mcp_base_url)
