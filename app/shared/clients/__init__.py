@@ -3,7 +3,7 @@
 """
 from app.shared.clients.milvus_utils import (
     create_hybrid_search_requests,
-    fetch_chunks_by_chunk_ids,
+    # fetch_chunks_by_chunk_ids,
     get_milvus_client,
     hybrid_search,
 )
