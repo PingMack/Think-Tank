@@ -14,3 +14,27 @@ MINERU_DOWNLOAD_TIMEOUT_SECONDS = 30
 PDF_PARSE_SERVICE_LOCAL_DIR = 'output'
 
 SUPPORTED_IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp"}
+
+# 文本切块最大长度：单个文本块最多包含 1000 字符（防止过长导致向量失真）
+CHUNK_MAX_SIZE = 1000
+# 文本切块基准长度：单个文本块理想大小为 600 字符（兼顾语义完整性 + 检索精度）
+CHUNK_SIZE = 600
+# 文本块重叠长度：相邻块之间重叠 20 字符，保证语义不被切断、上下文连贯
+CHUNK_OVERLAP = 50
+# 文本切块最小长度：单个文本块最多包含 400 字符（防止过长导致向量失真）
+CHUNK_MIN_SIZE = 400
+
+#切块的截取数量
+CHUNKS_SPLIT_TOP_NUMBER = 10
+# 向量化批次大小：每批处理 6 条切片，避免显存溢出
+EMBEDDING_BATCH_SIZE = 6
+
+# 主体识别上下文切片数：取前 K 个切片用于 LLM 识别
+ITEM_NAME_CONTEXT_CHUNK_K = 5
+# 主体识别上下文总字符数上限：防止上下文过长导致大模型输入超限
+ITEM_NAME_CONTEXT_TOTAL_MAX_CHARS = 10000
+
+# Milvus 向量维度（BGE-M3 稠密向量维度）
+MILVUS_VECTOR_DIM = 1024
+# Milvus VARCHAR 字段最大长度
+MILVUS_DEFAULT_VARCHAR_MAX_LENGTH = 512

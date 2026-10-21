@@ -184,8 +184,9 @@ def upload_pdf_and_poll(pdf_path_obj: Path) -> str:
             return full_zip_url
         # 解析失败
         elif state == 'failed':
-            logger.error(f'{batch_id}的解析任务失败，业务失败 提前终止')
-            raise ValueError(f'{batch_id}的解析任务失败，业务失败 提前终止')
+            error_msg = extract_result.get('err_msg', '未知错误')  # 👈 把服务器返回的详细报错拿出来
+            logger.error(f'{batch_id}的解析任务失败，MinerU返回原因：{error_msg}')
+            raise ValueError(f'{batch_id}的解析任务失败，原因：{error_msg}')
         # 其他状态 比如 running 正在解析
         else:
             logger.warning('本次解析正在进行中，暂未获得结果，耐心等待')

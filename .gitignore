@@ -132,6 +132,7 @@ env.bak/
 venv.bak/
 doc
 tests
+output
 
 # Spyder project settings
 .spyderproject
