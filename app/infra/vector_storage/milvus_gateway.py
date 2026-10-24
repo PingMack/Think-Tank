@@ -15,6 +15,7 @@ class MilvusGateway:
     def item_name_collection_name(self):
         return infra_config.milvus_config.item_name_collection
 
+
     @property
     def milvus_client(self):
         return get_milvus_client()

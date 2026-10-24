@@ -1,0 +1,14 @@
+#node_rrf需要的常量
+NODE_RRF_TOP=5
+NODE_RRF_K = 60
+
+
+RERANK_MAX_TOPK: int = 10
+RERANK_MIN_TOPK: int = 1
+RERANK_GAP_RATIO: float = 0.2
+RERANK_GAP_ABS: float = 0.2
+RERANK_MAX_INPUT_TOKENS: int = 512
+RERANK_SUMMARY_CHAR_RATIO: float = 1.3
+RERANK_MIN_SUMMARY_CHARS: int = 50
+
+SUPPORTED_IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".gif", ".bmp", ".webp")
